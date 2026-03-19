@@ -30,7 +30,6 @@ To model the FTP server as a Mealy machine by interacting with it through comman
 ```
 /oracle        → Membership queries (interaction with real FTP server)
 /learner       → L* algorithm implementation and Mealy machine construction
-/models        → Learned automata
 /evaluation    → Evaluation metrics (F1-score, accuracy)
 /ftp           → FTP client code
 /configs       → vsftpd configuration files (includes settings and defined alphabet)
