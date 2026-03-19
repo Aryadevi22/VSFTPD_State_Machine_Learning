@@ -27,7 +27,7 @@ To model the FTP server as a Mealy machine by interacting with it through comman
 * Visualization using Graphviz (.dot files)
 
 ### Folder Structure
-
+```
 /oracle        → Membership queries (interaction with real FTP server)
 /learner       → L* algorithm implementation and Mealy machine construction
 /models        → Learned automata
@@ -35,4 +35,4 @@ To model the FTP server as a Mealy machine by interacting with it through comman
 /ftp           → FTP client code
 /configs       → vsftpd configuration files (includes settings and defined alphabet)
 /algorithm     → Minimization of inferred automata
-
+```
