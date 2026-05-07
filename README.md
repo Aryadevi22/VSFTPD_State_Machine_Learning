@@ -2,12 +2,22 @@
 
 ## VSFTPD Automata Learning Project
 
-This project focuses on learning the behavior of a real FTP server (vsftpd) using automata learning techniques like the L* algorithm.
+This project implements the L Learning Algorithm* to perform black-box state machine inference on the vsftpd (Very Secure FTP Daemon). By treating the FTP server as an unknown DFA/Mealy Machine, the system automatically maps the server's protocol logic, session states, and authentication vulnerabilities.
 
 ### Objective
 
-To model the FTP server as a Mealy machine by interacting with it through commands and observing responses.
+The primary goal is to infer a formal Mealy Machine that represents the control flow of a live FTP server. This is achieved by systematically executing "Membership Queries" (interaction) and "Equivalence Queries" (hypothesis testing) to discover state transitions without access to the server's source code.
 
+### System Architecture
+The project is structured as a closed-loop learning system:
+
+Learner: Implements the L* algorithm to maintain the Observation Table and construct Hypotheses.
+
+Oracle (Membership Queries): Acts as the bridge between the Learner and the network. It translates abstract symbols into raw FTP socket commands.
+
+Target (Black Box): A local vsftpd instance running on 127.0.0.1:21.
+
+Equivalence Oracle: Validates the learned model against the real server using randomized sequence testing to find counterexamples.
 ### Setup
 
 * Install vsftpd
@@ -35,3 +45,13 @@ To model the FTP server as a Mealy machine by interacting with it through comman
 /configs       → vsftpd configuration files (includes settings and defined alphabet)
 /algorithm     → Minimization of inferred automata
 ```
+
+### 👥 Team Members
+
+Aryadevi P N
+
+A Sireesha Menon
+
+Goury Unnikrishnan
+
+Gayathri Shaji
